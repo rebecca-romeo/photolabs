@@ -10,7 +10,9 @@ import PhotoListItem from './components/PhotoListItem';
 import TopicList from './components/TopicList';
 import TopicListItem from './components/TopicListItem';
 
-import TopNavigation from './components/TopNavigationBar';
+import HomeRoute from './routes/HomeRoute';
+
+// import TopNavigation from './components/TopNavigationBar';
 
 import './App.scss';
 
@@ -29,7 +31,9 @@ const App = () => {
       {/* <TopicList /> */}
       {/* <TopicListItem /> */}
 
-      <TopNavigation />
+      {/* <TopNavigation /> */}
+
+      <HomeRoute />
 
 
 
