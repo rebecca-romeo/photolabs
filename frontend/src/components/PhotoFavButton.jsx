@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
 import { FavIcon } from './FavIcon';
-import { FavBadge } from './FavBadge';
 import '../styles/PhotoFavButton.scss';
 
 
@@ -20,7 +19,7 @@ function PhotoFavButton() {
   return (
     <div className="photo-list--fav-icon" onClick={switchLike}>
         <div className='photo-list--fav-icon-svg'>
-          {like ? <FavBadge /> : <FavIcon  />}
+          {like ? <FavIcon fill='#C80000' /> : <FavIcon  />}
         </div>
     </div>
 
