@@ -18,11 +18,12 @@ function PhotoFavButton() {
   console.log(like)
 
   return (
-    <button
-      className="photo-list--fav-icon"
-      onClick={switchLike}>
-        {like ? <FavBadge /> : <FavIcon  />}
-    </button>
+    <div className="photo-list--fav-icon" onClick={switchLike}>
+        <div className='photo-list--fav-icon-svg'>
+          {like ? <FavBadge /> : <FavIcon  />}
+        </div>
+    </div>
+
   );
 }
 
