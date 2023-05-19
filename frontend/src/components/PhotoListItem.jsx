@@ -4,7 +4,7 @@ import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = (props) => {
-  const { username, location, imageSource, hideUserName } = props;
+  const { username, city, country, imageSource, hideUserName } = props;
   return (
 
     <article className='photo-list--item'>
@@ -16,7 +16,7 @@ const PhotoListItem = (props) => {
         <img src={imageSource} alt="" className='photo-list--user-profile' />
         <div className='photo-list--user-info'>
           {!hideUserName && <p>{username}</p>}
-          <p className='photo-list--user-location'>{location}</p>
+          <p className='photo-list--user-location'>{city}, {country}</p>
         </div>
       </div>
 

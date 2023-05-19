@@ -10,19 +10,33 @@ import PhotoListItem from './components/PhotoListItem';
 import TopicList from './components/TopicList';
 import TopicListItem from './components/TopicListItem';
 
-import HomeRoute from './routes/HomeRoute';
-
-// import TopNavigation from './components/TopNavigationBar';
+import TopNavigation from './components/TopNavigationBar';
 
 import './App.scss';
 
-// Note: Rendering a single component to build components in isolation
+
+
+
+
+import photos from './mocks/photos.json';
+import topics from './mocks/topics.json';
+
+import HomeRoute from './routes/HomeRoute';
+
+
 const App = () => {
 
   // const photos = [<PhotoListItem key="1" />, <PhotoListItem key="2" />, <PhotoListItem  key="3" />]
 
   return (
     <div>
+      <HomeRoute photos={photos} topics={topics} />
+
+
+
+
+
+
       {/* <FavBadge /> */}
       {/* <FavIcon /> */}
       {/* <PhotoFavButton /> */}
@@ -32,12 +46,6 @@ const App = () => {
       {/* <TopicListItem /> */}
 
       {/* <TopNavigation /> */}
-
-      <HomeRoute />
-
-
-
-
     </div>
   )
 }

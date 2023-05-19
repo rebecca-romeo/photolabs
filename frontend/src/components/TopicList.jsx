@@ -2,12 +2,13 @@ import React from 'react';
 
 import '../styles/TopicList.scss';
 import TopicListItem from './TopicListItem';
+// import topics from '../mocks/topics.json';
 
 const TopicList = (props) => {
   const { topics } = props;
 
   const topicComponents = topics.map(topic => {
-    return <TopicListItem key={topic.id} label={topic.label} link={topic.link}/>
+    return <TopicListItem key={topic.id} label={topic.title} link="#"/>
   })
 
 
@@ -18,23 +19,4 @@ const TopicList = (props) => {
   )
 }
 
-TopicList.defaultProps = {
-  topics: [
-    {
-      id: 1,
-      label: 'Nature',
-      link: 'link placeholder'
-    },
-    {
-      id: 2,
-      label: 'Food',
-      link: 'link placeholder'
-    },
-    {
-      id: 3,
-      label: 'People',
-      link: 'link placeholder'
-    },
-  ]
-}
 export default TopicList
