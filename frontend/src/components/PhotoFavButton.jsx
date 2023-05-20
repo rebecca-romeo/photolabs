@@ -19,7 +19,8 @@ function PhotoFavButton(props) {
 
   const isFavorited = favouritedPhotos.includes(id);
 
-  const handleFavourites = () => {
+  const handleFavourites = (event) => {
+    event.stopPropagation()
     if (isFavorited) {
       setFavouritedPhotos(favouritedPhotos.filter((photoId) => photoId !== id));
     } else {
