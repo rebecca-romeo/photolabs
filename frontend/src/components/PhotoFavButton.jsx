@@ -10,16 +10,30 @@ import '../styles/PhotoFavButton.scss';
 // if heart is set to true, show heart filled
 // on click, change the state to opposite (ie true -> false)
 
-function PhotoFavButton() {
+function PhotoFavButton(props) {
+  const { id, favouritedPhotos, setFavouritedPhotos } = props;
 
-  const [like, setLike] = useState(false);
-  const switchLike = () => setLike(like ? false : true);
-  console.log(like)
+  // const [like, setLike] = useState(false);
+  // const switchLike = () => setLike(like ? false : true);
+  // console.log(like)
+
+  const isFavorited = favouritedPhotos.includes(id);
+
+  const handleFavourites = () => {
+    if (isFavorited) {
+      setFavouritedPhotos(favouritedPhotos.filter((photoId) => photoId !== id));
+    } else {
+      setFavouritedPhotos([...favouritedPhotos, id]);
+    }
+  };
+
+  console.log("check favs", isFavorited)
+
 
   return (
-    <div className="photo-list--fav-icon" onClick={switchLike}>
+    <div className="photo-list--fav-icon" onClick={handleFavourites}>
         <div className='photo-list--fav-icon-svg'>
-          {like ? <FavIcon fill='#C80000' /> : <FavIcon  />}
+          <FavIcon fill={isFavorited ? '#C80000'  : '#EEE'} />
         </div>
     </div>
 
