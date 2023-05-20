@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import FavBadge from './components/FavBadge';
 import FavIcon from './components/FavIcon';
@@ -23,17 +23,22 @@ import topics from './mocks/topics.js';
 
 import HomeRoute from './routes/HomeRoute';
 
+import PhotoDetailsModal from './routes/PhotoDetailsModal'
+
 
 const App = () => {
+
+  const [ openModal, setOpenModal ] = useState(false);
+  const modal = () => {
+    setOpenModal(true);
+  }
 
   // const photos = [<PhotoListItem key="1" />, <PhotoListItem key="2" />, <PhotoListItem  key="3" />]
 
   return (
     <div>
-      <HomeRoute photos={photos} topics={topics} />
-
-
-
+      <HomeRoute photos={photos} topics={topics} modal={modal} />
+      { openModal && <PhotoDetailsModal /> }
 
 
 

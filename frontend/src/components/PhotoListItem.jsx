@@ -4,10 +4,10 @@ import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = (props) => {
-  const { id, username, city, country, imageSource, hideUserName, favouritedPhotos, setFavouritedPhotos } = props;
+  const { id, username, city, country, imageSource, hideUserName, favouritedPhotos, setFavouritedPhotos, modal } = props;
   return (
 
-    <article className='photo-list--item'>
+    <article className='photo-list--item' onClick={modal}>
       <PhotoFavButton favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} id={id} />
 
       <img src={imageSource} className='photo-list--image' />
