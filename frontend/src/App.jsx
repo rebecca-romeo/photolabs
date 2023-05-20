@@ -19,7 +19,7 @@ import './App.scss';
 
 
 import photos from './mocks/photos.json';
-import topics from './mocks/topics.json';
+import topics from './mocks/topics.js';
 
 import HomeRoute from './routes/HomeRoute';
 
