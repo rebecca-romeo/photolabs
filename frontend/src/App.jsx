@@ -28,6 +28,8 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal'
 
 const App = () => {
 
+  const [ favouritedPhotos, setFavouritedPhotos ] = useState([]);
+
   //State to control which photo is selected in the modal
   const [selectPhoto, setSelectPhoto] = useState({});
 
@@ -44,12 +46,18 @@ const App = () => {
     setModal(false);
   }
 
-  // const photos = [<PhotoListItem key="1" />, <PhotoListItem key="2" />, <PhotoListItem  key="3" />]
 
   return (
     <div>
-      <HomeRoute photos={photos} topics={topics} openModal={openModal} />
-      { modal && <PhotoDetailsModal closeModal={closeModal} selectPhoto={selectPhoto} /> }
+      <HomeRoute photos={photos} topics={topics} openModal={openModal} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos}/>
+
+      { modal &&
+      <PhotoDetailsModal
+      closeModal={closeModal}
+      selectPhoto={selectPhoto}
+      photos={photos}
+      favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos}
+      /> }
 
 
 

@@ -5,9 +5,8 @@ import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
-  const {photos, topics, openModal} = props;
+  const {photos, topics, openModal, setFavouritedPhotos, favouritedPhotos} = props;
 
-  const [ favouritedPhotos, setFavouritedPhotos ] = useState([]);
 
 
   return (

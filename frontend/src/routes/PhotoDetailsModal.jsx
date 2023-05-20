@@ -1,8 +1,12 @@
 import React from 'react';
+import PhotoList from '../components/PhotoList';
+import PhotoFavButton from '../components/PhotoFavButton';
 import '../styles/PhotoDetailsModal.scss'
+import '../styles/PhotoFavButton.scss';
 
 export const PhotoDetailsModal = (props) => {
-  console.log("check photo props", props.selectPhoto)
+  const { photos, selectPhoto, favouritedPhotos, setFavouritedPhotos } = props;
+  console.log("check photo props", selectPhoto)
   return (
   <div className='photo-details-modal'>
     <button className='photo-details-modal--close-button' onClick={props.closeModal}>
@@ -19,9 +23,15 @@ export const PhotoDetailsModal = (props) => {
       </svg>
     </button>
 
-    <img src={props.selectPhoto.imageSource} alt="" className='photo-details-modal--image'/>
+    <section className='photo-details-modal--images'>
+    <PhotoFavButton favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} id={selectPhoto.id} />
+    <img src={selectPhoto.imageSource} alt="" className='photo-details-modal--image'/>
 
     <h1 className='photo-details-modal--header'>Similar photos</h1>
+
+
+    <PhotoList photos={photos} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} />
+    </section>
 
   </div>
   )
