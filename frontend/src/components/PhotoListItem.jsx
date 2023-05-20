@@ -5,9 +5,21 @@ import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = (props) => {
   const { id, username, city, country, imageSource, hideUserName, favouritedPhotos, setFavouritedPhotos, openModal } = props;
+
+  const handleClick = () => {
+    openModal({
+      id,
+      username,
+      city,
+      country,
+      imageSource
+    });
+  };
+
   return (
 
-    <article className='photo-list--item' onClick={openModal}>
+    <article className='photo-list--item' onClick={handleClick}>
+
       <PhotoFavButton favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} id={id} />
 
       <img src={imageSource} className='photo-list--image' />

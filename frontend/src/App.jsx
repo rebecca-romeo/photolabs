@@ -28,12 +28,19 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal'
 
 const App = () => {
 
+  //State to control which photo is selected in the modal
+  const [selectPhoto, setSelectPhoto] = useState({});
+
+  // State and fuctions to control whether the modal is open or closed
   const [ modal, setModal ] = useState(false);
-  const openModal = () => {
+
+  const openModal = (photo) => {
+    setSelectPhoto(photo)
     setModal(true);
   }
 
   const closeModal = () => {
+    setSelectPhoto(null)
     setModal(false);
   }
 
@@ -42,7 +49,7 @@ const App = () => {
   return (
     <div>
       <HomeRoute photos={photos} topics={topics} openModal={openModal} />
-      { modal && <PhotoDetailsModal closeModal={closeModal} /> }
+      { modal && <PhotoDetailsModal closeModal={closeModal} selectPhoto={selectPhoto} /> }
 
 
 
