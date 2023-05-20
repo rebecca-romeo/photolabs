@@ -23,13 +23,25 @@ export const PhotoDetailsModal = (props) => {
       </svg>
     </button>
 
-    <section className='photo-details-modal--images'>
+
+    <div className='photo-details-modal--image'>
     <PhotoFavButton favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} id={selectPhoto.id} />
-    <img src={selectPhoto.imageSource} alt="" className='photo-details-modal--image'/>
+    <img src={selectPhoto.imageSource} alt="" />
+    </div>
 
+    <div className='photo-details-modal--photographer-details'>
+      <img src={selectPhoto.imageSource} alt="" className='photo-details-modal--photographer-profile'/>
+      <div className='photo-details-modal--photographer-info'>
+      <p>{selectPhoto.username}</p>
+      <p className='photo-details-modal--photographer-location'>{selectPhoto.city}, {selectPhoto.country}</p>
+      </div>
+    </div>
+
+    <div className="divider"></div>
+
+
+    <section className='photo-details-modal--images'>
     <h1 className='photo-details-modal--header'>Similar photos</h1>
-
-
     <PhotoList photos={photos} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} />
     </section>
 
