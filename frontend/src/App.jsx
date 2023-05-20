@@ -28,17 +28,21 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal'
 
 const App = () => {
 
-  const [ openModal, setOpenModal ] = useState(false);
-  const modal = () => {
-    setOpenModal(true);
+  const [ modal, setModal ] = useState(false);
+  const openModal = () => {
+    setModal(true);
+  }
+
+  const closeModal = () => {
+    setModal(false);
   }
 
   // const photos = [<PhotoListItem key="1" />, <PhotoListItem key="2" />, <PhotoListItem  key="3" />]
 
   return (
     <div>
-      <HomeRoute photos={photos} topics={topics} modal={modal} />
-      { openModal && <PhotoDetailsModal /> }
+      <HomeRoute photos={photos} topics={topics} openModal={openModal} />
+      { modal && <PhotoDetailsModal closeModal={closeModal} /> }
 
 
 

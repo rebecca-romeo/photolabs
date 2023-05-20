@@ -5,7 +5,7 @@ import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
-  const {photos, topics, modal} = props;
+  const {photos, topics, openModal} = props;
 
   const [ favouritedPhotos, setFavouritedPhotos ] = useState([]);
 
@@ -13,7 +13,7 @@ const HomeRoute = (props) => {
   return (
     <div className="home-route">
       <TopNavigationBar topics={topics} favouritedPhotos={favouritedPhotos} />
-      <PhotoList photos={photos} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} modal={modal} />
+      <PhotoList photos={photos} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} openModal={openModal} />
     </div>
   )
 }
