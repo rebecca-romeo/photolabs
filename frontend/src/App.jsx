@@ -51,6 +51,17 @@ const App = () => {
       });
   };
 
+  const handleHomepageClick = () => {
+    axios({
+      url: "http://localhost:8001/api/photos",
+      method: "GET",
+      dataResponse: "json"
+    })
+      .then((res) => {
+        setPhotos(prev => res.data)
+      });
+  };
+
   return (
     <div>
       <HomeRoute
@@ -58,7 +69,8 @@ const App = () => {
         topics={topics}
         openModal={openModal}
         favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos}
-        handleTopicClick={handleTopicClick} />
+        handleTopicClick={handleTopicClick}
+        handleHomepageClick={handleHomepageClick} />
 
       {modal &&
         <PhotoDetailsModal
