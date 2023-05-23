@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
@@ -17,10 +16,12 @@ const PhotoListItem = (props) => {
   };
 
   return (
-
     <article className='photo-list--item' onClick={handleClick}>
-
-      <PhotoFavButton favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} id={id} />
+      <PhotoFavButton
+        favouritedPhotos={favouritedPhotos}
+        setFavouritedPhotos={setFavouritedPhotos}
+        id={id}
+      />
 
       <img src={imageSource} className='photo-list--image' />
 
@@ -34,8 +35,8 @@ const PhotoListItem = (props) => {
 
     </article>
 
-  )
-}
+  );
+};
 
 PhotoListItem.defaultProps = {
   username: 'Jacob',

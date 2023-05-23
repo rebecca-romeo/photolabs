@@ -1,9 +1,5 @@
-import React, { useCallback, useState } from 'react';
-
 import { FavIcon } from './FavIcon';
 import '../styles/PhotoFavButton.scss';
-
-
 
 // when user clicks the button, say clicked
 // if like is set to false, show heart outline
@@ -12,10 +8,6 @@ import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
   const { id, favouritedPhotos, setFavouritedPhotos } = props;
-
-  // const [like, setLike] = useState(false);
-  // const switchLike = () => setLike(like ? false : true);
-  // console.log(like)
 
   const isFavorited = favouritedPhotos.includes(id);
 
@@ -28,9 +20,6 @@ function PhotoFavButton(props) {
     }
   };
 
-  console.log("check favs", isFavorited)
-
-
   return (
     <div className="photo-list--fav-icon" onClick={handleFavourites}>
         <div className='photo-list--fav-icon-svg'>
@@ -39,6 +28,6 @@ function PhotoFavButton(props) {
     </div>
 
   );
-}
+};
 
 export default PhotoFavButton;
