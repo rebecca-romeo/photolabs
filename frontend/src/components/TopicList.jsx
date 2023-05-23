@@ -5,10 +5,10 @@ import TopicListItem from './TopicListItem';
 // import topics from '../mocks/topics.json';
 
 const TopicList = (props) => {
-  const { topics } = props;
+  const { topics, link, handleTopicClick } = props;
 
   const topicComponents = topics.map(topic => {
-    return <TopicListItem key={topic.id} label={topic.title} link="#"/>
+    return <TopicListItem key={topic.id} id={topic.id} label={topic.title} link={"#"} handleTopicClick={handleTopicClick} />
   })
 
 

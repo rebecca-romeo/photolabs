@@ -5,14 +5,26 @@ import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
-  const {photos, topics, openModal, setFavouritedPhotos, favouritedPhotos} = props;
+  const {photos, topics, openModal, setFavouritedPhotos, favouritedPhotos, handleTopicClick} = props;
 
 
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={topics} favouritedPhotos={favouritedPhotos} />
-      <PhotoList photos={photos} favouritedPhotos={favouritedPhotos} setFavouritedPhotos={setFavouritedPhotos} openModal={openModal} />
+
+      <TopNavigationBar
+      topics={topics}
+      favouritedPhotos={favouritedPhotos}
+      handleTopicClick={handleTopicClick}
+      />
+
+      <PhotoList
+      photos={photos}
+      favouritedPhotos={favouritedPhotos}
+      setFavouritedPhotos={setFavouritedPhotos}
+      openModal={openModal}
+      />
+
     </div>
   )
 }
