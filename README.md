@@ -10,12 +10,17 @@ PhotoLabs is a simple stock photo application - specifically a React-based singl
 
 ## Homepage view
 On the homepage, users can see all the photos.
+!["homepage with all photos"](https://github.com/rebecca-romeo/photolabs/blob/main/frontend/public/homepage.png)
 
 ## Category view
-Users can choose from 5 categories located in the navigation which will display relevant photos to that topic
+Users can choose from 5 categories located in the navigation which will display relevant photos to that topic - here we are viewing the travel category
+!["choosing a category shows photos of similar topic"](https://github.com/rebecca-romeo/photolabs/blob/main/frontend/public/category.png)
+
 
 ## Modal view
 Users can scroll through a modal to see a larger image of the selected photo, details about the publisher of the photo, and similar photos
+!["modal that includes large photo and similar photos"](https://github.com/rebecca-romeo/photolabs/blob/main/frontend/public/modal.png)
+
 
 ## Setup
 
