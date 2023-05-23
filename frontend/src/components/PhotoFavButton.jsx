@@ -1,3 +1,4 @@
+import React from 'react';
 import { FavIcon } from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
