@@ -29,6 +29,8 @@ export const PhotoDetailsModal = (props) => {
     <img src={selectPhoto.imageSource} alt="" />
     </div>
 
+    {/* {console.log("check select photos", sele)} */}
+
     <div className='photo-details-modal--photographer-details'>
       <img src={selectPhoto.imageSource} alt="" className='photo-details-modal--photographer-profile'/>
       <div className='photo-details-modal--photographer-info'>

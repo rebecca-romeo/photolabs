@@ -4,7 +4,7 @@ import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = (props) => {
-  const { id, username, city, country, imageSource, hideUserName, favouritedPhotos, setFavouritedPhotos, openModal } = props;
+  const { id, username, city, country, imageSource, hideUserName, userProfileImage, favouritedPhotos, setFavouritedPhotos, openModal } = props;
 
   const handleClick = () => {
     openModal({
@@ -25,7 +25,7 @@ const PhotoListItem = (props) => {
       <img src={imageSource} className='photo-list--image' />
 
       <div className='photo-list--user-details'>
-        <img src={imageSource} alt="" className='photo-list--user-profile' />
+        <img src={userProfileImage} alt="" className='photo-list--user-profile' />
         <div className='photo-list--user-info'>
           {!hideUserName && <p>{username}</p>}
           <p className='photo-list--user-location'>{city}, {country}</p>
