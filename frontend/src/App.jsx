@@ -26,6 +26,9 @@ const App = () => {
     })
       .then((res) => {
         setPhotos(prev => res.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching photos:', error);
       });
   }, []);
 
@@ -37,6 +40,9 @@ const App = () => {
     })
       .then((res) => {
         setTopics(prev => res.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching photos by topic:', error);
       });
   }, []);
 
@@ -59,6 +65,9 @@ const App = () => {
     })
       .then((res) => {
         setPhotos(prev => res.data)
+      })
+      .catch((error) => {
+        console.error('Error fetching photos', error);
       });
   };
 
